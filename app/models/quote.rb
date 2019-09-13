@@ -1,9 +1,3 @@
 class Quote < ApplicationRecord
-  def change
-    create_table :quote do |t|
-      t.string :saying
-      t.string :author
-      t. timestamps
-    end
-  end 
+   validates :saying, presence: true, length: { maximum: 140, minimum: 3 }
 end
